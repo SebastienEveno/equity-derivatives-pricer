@@ -5,8 +5,8 @@ namespace EquityDerivativesPricer.Domain.Models
 	public enum OptionStyle
 	{
 		[EnumMember(Value = "American")]
-		AMERICAN,
+		American,
 		[EnumMember(Value = "European")]
-		EUROPEAN
+		European
 	}
 }

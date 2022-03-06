@@ -29,7 +29,7 @@ namespace EquityDerivativesPricer.Domain.Services.Pricers.VanillaOptions.FiniteD
 
 		private FiniteDifferenceResult FiniteDifference(VanillaOption option, double riskFreeInterestRate)
 		{
-			var multiplier = option.OptionType == OptionType.CALL
+			var multiplier = option.OptionType == OptionType.Call
 				? 1
 				: -1;
 
@@ -55,21 +55,21 @@ namespace EquityDerivativesPricer.Domain.Services.Pricers.VanillaOptions.FiniteD
 			// Set value of the option at the boundaries of the underlying
 			for (var i = 0; i < _numberOfTimeSteps + 1; i++)
 			{
-				if (option.OptionStyle == OptionStyle.EUROPEAN)
+				if (option.OptionStyle == OptionStyle.European)
 				{
-					prices[i, 0] = option.OptionType == OptionType.CALL
+					prices[i, 0] = option.OptionType == OptionType.Call
 						? 0
 						: strike * Math.Exp(-riskFreeInterestRate * i * deltaT);
-					prices[i, _numberOfSpaceSteps] = option.OptionType == OptionType.CALL
+					prices[i, _numberOfSpaceSteps] = option.OptionType == OptionType.Call
 						? spotPrice
 						: 0;
 				}
 				else
 				{
-					prices[i, 0] = option.OptionType == OptionType.CALL
+					prices[i, 0] = option.OptionType == OptionType.Call
 						? 0
 						: strike;
-					prices[i, _numberOfSpaceSteps] = option.OptionType == OptionType.CALL
+					prices[i, _numberOfSpaceSteps] = option.OptionType == OptionType.Call
 						? spotPrice
 						: 0;
 				}
@@ -88,7 +88,7 @@ namespace EquityDerivativesPricer.Domain.Services.Pricers.VanillaOptions.FiniteD
 					// Explicit method
 					prices[i, j] = alpha * prices[i + 1, j - 1] + beta * prices[i + 1, j] + gamma * prices[i + 1, j + 1];
 
-					if (option.OptionStyle == OptionStyle.AMERICAN)
+					if (option.OptionStyle == OptionStyle.American)
 					{
 						prices[i, j] = Math.Max(multiplier * (Math.Exp(Math.Log(spotPrice) + (j - _numberOfSpaceSteps / 2) * deltaZ) - strike), prices[i, j]);
 					}

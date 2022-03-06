@@ -27,7 +27,7 @@ namespace EquityDerivativesPricer.Domain.Services.Pricers.VanillaOptions.Binomia
 
 		private BinomialTreeResult BinomialTree(VanillaOption option, double riskFreeInterestRate)
 		{
-			var multiplier = option.OptionType == OptionType.CALL
+			var multiplier = option.OptionType == OptionType.Call
 				? 1
 				: -1;
 
@@ -66,7 +66,7 @@ namespace EquityDerivativesPricer.Domain.Services.Pricers.VanillaOptions.Binomia
 				{
 					prices[i, j] = (q * prices[i + 1, j + 1] + (1 - q) * prices[i + 1, j]) * Math.Exp(-riskFreeInterestRate * deltaT);
 
-					if (option.OptionStyle == OptionStyle.AMERICAN)
+					if (option.OptionStyle == OptionStyle.American)
 					{
 						prices[i, j] = Math.Max(multiplier * (spotPrice * Math.Pow(u, j) * Math.Pow(d, i - j) - strike), prices[i, j]);
 					}

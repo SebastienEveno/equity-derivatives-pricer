@@ -5,8 +5,8 @@ namespace EquityDerivativesPricer.Domain.Models
 	public enum OptionType
 	{
 		[EnumMember(Value = "Call")]
-		CALL,
+		Call,
 		[EnumMember(Value = "Put")]
-		PUT
+		Put
 	}
 }

@@ -37,8 +37,8 @@ namespace EquityDerivativesPricer.Tests.VanillaOptions
 
 			var vanillaOption = new VanillaOption
 			{
-				OptionStyle = OptionStyle.EUROPEAN,
-				OptionType = OptionType.CALL,
+				OptionStyle = OptionStyle.European,
+				OptionType = OptionType.Call,
 				Strike = 100.0,
 				Maturity = Maturity.Parse("1Y"),
 				Underlying = underlying
@@ -82,8 +82,8 @@ namespace EquityDerivativesPricer.Tests.VanillaOptions
 
 			var vanillaOption = new VanillaOption
 			{
-				OptionStyle = OptionStyle.AMERICAN,
-				OptionType = OptionType.CALL,
+				OptionStyle = OptionStyle.American,
+				OptionType = OptionType.Call,
 				Strike = 100.0,
 				Maturity = Maturity.Parse("1Y"),
 				Underlying = underlying
@@ -127,8 +127,8 @@ namespace EquityDerivativesPricer.Tests.VanillaOptions
 
 			var vanillaOption = new VanillaOption
 			{
-				OptionStyle = OptionStyle.AMERICAN,
-				OptionType = OptionType.CALL,
+				OptionStyle = OptionStyle.American,
+				OptionType = OptionType.Call,
 				Strike = 100.0,
 				Maturity = Maturity.Parse("1Y"),
 				Underlying = underlying
@@ -172,8 +172,8 @@ namespace EquityDerivativesPricer.Tests.VanillaOptions
 
 			var vanillaOption = new VanillaOption
 			{
-				OptionStyle = OptionStyle.AMERICAN,
-				OptionType = OptionType.CALL,
+				OptionStyle = OptionStyle.American,
+				OptionType = OptionType.Call,
 				Strike = 100.0,
 				Maturity = Maturity.Parse("1Y"),
 				Underlying = underlying
@@ -218,8 +218,8 @@ namespace EquityDerivativesPricer.Tests.VanillaOptions
 
 			var vanillaOption = new VanillaOption
 			{
-				OptionStyle = OptionStyle.AMERICAN,
-				OptionType = OptionType.PUT,
+				OptionStyle = OptionStyle.American,
+				OptionType = OptionType.Put,
 				Strike = 52.0,
 				Maturity = Maturity.Parse("2Y"),
 				Underlying = underlying
@@ -264,8 +264,8 @@ namespace EquityDerivativesPricer.Tests.VanillaOptions
 
 			var vanillaOption = new VanillaOption
 			{
-				OptionStyle = OptionStyle.EUROPEAN,
-				OptionType = OptionType.PUT,
+				OptionStyle = OptionStyle.European,
+				OptionType = OptionType.Put,
 				Strike = 52.0,
 				Maturity = Maturity.Parse("2Y"),
 				Underlying = underlying
@@ -310,8 +310,8 @@ namespace EquityDerivativesPricer.Tests.VanillaOptions
 
 			var vanillaOption = new VanillaOption
 			{
-				OptionStyle = OptionStyle.EUROPEAN,
-				OptionType = OptionType.CALL,
+				OptionStyle = OptionStyle.European,
+				OptionType = OptionType.Call,
 				Strike = 800.0,
 				Maturity = Maturity.Parse("6M"),
 				Underlying = underlying

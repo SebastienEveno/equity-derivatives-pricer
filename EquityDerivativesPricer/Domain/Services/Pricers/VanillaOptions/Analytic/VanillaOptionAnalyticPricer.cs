@@ -15,7 +15,7 @@ namespace EquityDerivativesPricer.Domain.Services.Pricers.VanillaOptions.Analyti
 
 		public PricingResult Price(PricingConfiguration config, VanillaOption option)
 		{
-			return option.OptionStyle == OptionStyle.EUROPEAN
+			return option.OptionStyle == OptionStyle.European
 				? PriceEuropeanOption(config, option)
 				: throw new InvalidOperationException(
 					$"The \"{NumericalMethod.Analytic}\" numerical method is not available for American vanilla options.");
@@ -37,8 +37,8 @@ namespace EquityDerivativesPricer.Domain.Services.Pricers.VanillaOptions.Analyti
 
 			var multiplier = option.OptionType switch
 			{
-				OptionType.CALL => 1,
-				OptionType.PUT => -1,
+				OptionType.Call => 1,
+				OptionType.Put => -1,
 				_ => throw new InvalidOperationException($"Error in option type \"{option.OptionType}\".")
 			};
 
